@@ -1,5 +1,5 @@
-class  2003.09.02  4-06  Bizhik.A.V.
-class  2003.09.03  4-12  Alekseev.Q.T.
-class  2003.09.04  1-23  Bizhik.A.V.
-class  2003.09.05  2-20  Gugov.T.P
-class  2003.09.06  4-20  Bizhik.A.V.
+2003.09.02  4-06  Bizhik.A.V.
+2003.09.03  4-12  Alekseev.Q.T.
+2003.09.04  1-23  Bizhik.A.V.
+2003.09.05  2-20  Gugov.T.P
+2003.09.06  4-20  Bizhik.A.V.
