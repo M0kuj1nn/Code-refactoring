@@ -1,6 +1,7 @@
 import unittest
 import Functions
-from Classes import EducationClass
+from EducationClass import EducationClass
+
 
 class PipiTestCase(unittest.TestCase):
     def test_file_format(self):
@@ -44,7 +45,6 @@ class PipiTestCase(unittest.TestCase):
 
         self.assertRaises(TypeError, Functions.print_entire_schedule, obj)
         self.assertRaises(AttributeError, Functions.print_entire_schedule, list_obj)
-
 
 
 if __name__ == '__main__':

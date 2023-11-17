@@ -1,4 +1,4 @@
-from Classes import EducationClass
+from EducationClass import EducationClass
 import Functions
 
 if __name__ == '__main__':

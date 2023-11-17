@@ -1,8 +1,4 @@
-class Date:
-    def __init__(self, year, month, day):
-        self.year = year
-        self.month = month
-        self.day = day
+from DateClass import Date
 
 
 class EducationClass(Date):
@@ -10,3 +6,4 @@ class EducationClass(Date):
         super().__init__(year, month, day)
         self.classroom = classroom
         self.teacher = teacher
+
