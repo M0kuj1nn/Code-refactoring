@@ -2,14 +2,19 @@ from DateClass import Date
 
 
 class EducationClass(Date):
-    def __init__(self, year, month, day, classroom, teacher):
-        super().__init__(year, month, day)
-        self.classroom = classroom
-        self.teacher = teacher
-        self.date = None
+    classroom = None
+    teacher = None
 
-    def date_join(self):
-        self.date = ".".join([str(self.year), str(self.month), str(self.day)])
+    def write(self, string):
+        try:
+            buff = string.split()
+            super().write_date(buff[0])
+            self.classroom = buff[1]
+            self.teacher = buff[2]
+        except IndexError as error:
+            print(f"Error: {repr(error)}")
+            raise IndexError
 
     def print_class(self):
-        print(self.date, self.classroom, self.teacher)
+        print(".".join([str(self.year), str(self.month), str(self.day)]), self.classroom, self.teacher)
+

@@ -1,6 +1,7 @@
 import unittest
 import Functions
 from EducationClass import EducationClass
+from DateClass import Date
 
 
 class PipiTestCase(unittest.TestCase):
@@ -11,40 +12,31 @@ class PipiTestCase(unittest.TestCase):
         self.assertRaises(Exception, Functions.file_open, "EmptyTestFile.txt")
 
     def test_date_correct_input(self):
-        lines = [".02 4-06 Bizhik.A.V.", "2003.03 4-12 Alekseev.Q.T."]
+        line_1 = "09.02"
+        line_2 = "2003.00.114"
+        date_obj = Date()
         with self.assertRaises(Exception):
-            Functions.list_of_objects(EducationClass, lines)
+            date_obj.check_date_correctness(line_1)
+        with self.assertRaises(Exception):
+            date_obj.check_date_correctness(line_2)
 
     def test_list_lines(self):
-        lines = ["2003.02.09 Bizhik.A.V.", "2003.09.03 4-12"]
+        line = "2003.02.09 Bizhik.A.V."
+        ed_obj = EducationClass()
         with self.assertRaises(IndexError):
-            Functions.list_of_objects(EducationClass, lines)
+            ed_obj.write(line)
 
     def test_obj_init(self):
-        class TestClass:
-            def __init__(self, a, b, c, d):
-                self.a = a
-                self.b = b
-                self.c = c
-                self.d = d
-
+        none_obj = None
         lines = ["2003.09.03 4-12 Bizhik.A.V.", "2003.09.03 4-12 Alekseev.Q.T."]
         with self.assertRaises(TypeError):
-            Functions.list_of_objects(TestClass, lines)
+            Functions.list_of_objects(none_obj, lines)
 
     def test_print_entire_schedule(self):
-        obj = None
-
-        class TestClass:
-            def __init__(self):
-                self.year = "2003"
-                self.month = "10"
-                self.classroom = "3-03"
-                self.teacher = "Sasha Grey"
-        list_obj = [TestClass() for _ in range(3)]
-
-        self.assertRaises(TypeError, Functions.print_entire_schedule, obj)
-        self.assertRaises(AttributeError, Functions.print_entire_schedule, list_obj)
+        obj_list = [None, None]
+        list = []
+        self.assertRaises(AttributeError, Functions.print_entire_schedule, obj_list)
+        self.assertRaises(Exception, Functions.print_entire_schedule, list)
 
 
 if __name__ == '__main__':
