@@ -1,21 +1,21 @@
 @startuml
 class Date {
-    year = None
-    month = None
-    day = None
-    def check_date_correctness(self, date)
-    def read_date(self, date)
+    year: Integer
+    month: Integer
+    day: Integer
+    def check_date_correctness(date)
+    def read_date(date)
 
 }
 
 class EducationClass {
-    date = Date()
-    classroom = None
-    teacher = None
-    def valid_classroom(self, classroom)
-    def valid_teacher(self, teacher)
-    def read(self, string)
-    def print_class(self)
+    date: Date
+    classroom: String
+    teacher: String
+    def valid_classroom(classroom)
+    def valid_teacher(teacher)
+    def read(string)
+    def print_class()
 }
 
 EducationClass *-- Date
