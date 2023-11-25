@@ -20,11 +20,17 @@ class PipiTestCase(unittest.TestCase):
         with self.assertRaises(Exception):
             date_obj.check_date_correctness(line_2)
 
-    def test_list_lines(self):
-        line = "2003.02.09 Bizhik.A.V."
+    def test_valid_classroom(self):
+        line = "410"
         ed_obj = EducationClass()
-        with self.assertRaises(IndexError):
-            ed_obj.write(line)
+        with self.assertRaises(Exception):
+            ed_obj.valid_classroom(line)
+
+    def test_valid_teacher(self):
+        line = "Bibi.A"
+        ed_obj = EducationClass()
+        with self.assertRaises(Exception):
+            ed_obj.valid_teacher(line)
 
     def test_obj_init(self):
         none_obj = None

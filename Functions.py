@@ -14,7 +14,7 @@ def list_of_objects(obj, lines) -> list:
     try:
         for string in lines:
             ed_class = obj()
-            ed_class.write(string)
+            ed_class.read(string)
             day_list.append(ed_class)
         return day_list
     except TypeError as error:

@@ -17,7 +17,7 @@ class Date:
         if 1 <= int(date_elems[2]) >= 31:
             raise Exception("Error:Incorrect day input")
 
-    def write_date(self, date):
+    def read_date(self, date):
         self.check_date_correctness(date)
         date_elems = date.split(".")
         self.year = date_elems[0]
