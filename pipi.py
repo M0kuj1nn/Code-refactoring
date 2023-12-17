@@ -1,6 +1,28 @@
-from EducationClass import EducationClass
-import Functions
+"""Main file"""
+import cProfile
+from educationclass import EducationClass
+import functions
+
+
+def main():
+    """Main function"""
+    functions.print_entire_schedule(
+        functions.list_of_objects(EducationClass, functions.file_open('pupu.txt')))
+
 
 if __name__ == '__main__':
-    Functions.print_entire_schedule(
-        Functions.list_of_objects(EducationClass, Functions.file_open('pupu.txt')))
+    main()
+
+cProfile.run("main()")
+
+
+
+
+
+
+
+
+
+
+
+
